@@ -19,5 +19,6 @@ A command line interface to read articles on irunfar.com
 ### Important Steps I Followed
 `bundle gem irunfar_reader`
 
+following along with this walkthrough: https://www.youtube.com/watch?v=_lDExWIhYKI
 
 

@@ -1,5 +1,2 @@
-require "irunfar_reader/version"
-
-module IrunfarReader
-  # Your code goes here...
-end
+require_relative "./irunfar_reader/version"
+require_relative './irunfar_reader/cli'
