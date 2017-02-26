@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/irunfar_reader'
+require "bundler/setup"
+require "irunfar_reader"
 
 IrunfarReader::CLI.new.call
