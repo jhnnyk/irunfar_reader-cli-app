@@ -11,6 +11,9 @@ class IrunfarReader::CLI
     puts "Welcome to the iRunFar.com Reader!"
     puts "----------------------------------"
     @articles = IrunfarReader::Article.all
+    @articles.each.with_index(1) do |article, i|
+      puts "#{i}. #{article.title} - #{article.author}"      
+    end
     puts "----------------------------------"
   end
 
@@ -23,14 +26,16 @@ class IrunfarReader::CLI
       puts "or 'exit' to exit the program."
       input = gets.strip.downcase
 
-      case input
-      when "1"
-        puts "Article 1 content..."
-      when "2"
-        puts "Article 2 content..."
-      when "list"
+      if input.to_i > 0
+        the_article =  @articles[input.to_i - 1]
+        puts ""
+        puts "#{the_article.title} - #{the_article.author}"
+        puts "-----"
+        puts the_article.content
+        puts ""
+      elsif input == "list"
         list_articles
-      when "exit"
+      elsif input == "exit"
         goodbye
       else
         puts "Not sure what you want, please type 'list' or 'exit'."

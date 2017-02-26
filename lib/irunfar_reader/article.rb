@@ -2,12 +2,6 @@ class IrunfarReader::Article
   attr_accessor :title, :author, :url, :content
   
   def self.all
-    # puts <<~DOC
-    #   1. 2017 Transgrancanaria Live Coverage
-    #   2. 2017 Transgrancanaria Preview
-    #   3. The Simple Pleasure Of The Long Run
-    #   4. Didrik Hermansen Pre-2017 Transgrancanaria Interview
-    # DOC
 
     article_1 = self.new
     article_1.title = "2017 Transgrancanaria Live Coverage"
