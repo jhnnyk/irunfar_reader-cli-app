@@ -16,6 +16,13 @@ A command line interface to read articles on irunfar.com
     * user types a number corresponding to the article they'd like to read
     * display full article
 
+
+#### What is an article?
+* An article has a title
+* An article has a author
+* An article has content
+* An article had a URL
+
 ### Important Steps I Followed
 `bundle gem irunfar_reader`
 
