@@ -1,6 +1,7 @@
 class IrunfarReader::CLI
   
   def call
+    IrunfarReader::Article.scrape_articles
     list_articles
     menu
   end
