@@ -20,8 +20,9 @@ class IrunfarReader::Article
     articles
   end
 
-  def self.scrape_irunfar
-    
+  def scrape_full_content
+    doc = Nokogiri::HTML(open(self.url))
+    self.content = doc.css(".post p").text
   end
 
 end

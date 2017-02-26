@@ -27,12 +27,7 @@ class IrunfarReader::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        the_article =  @articles[input.to_i - 1]
-        puts ""
-        puts "#{the_article.title} - #{the_article.author}"
-        puts "-----"
-        puts the_article.content
-        puts ""
+        show_article(input.to_i - 1)
       elsif input == "list"
         list_articles
       elsif input == "exit"
@@ -41,6 +36,16 @@ class IrunfarReader::CLI
         puts "Not sure what you want, please type 'list' or 'exit'."
       end
     end
+  end
+
+  def show_article(i)
+    the_article =  @articles[i]
+    the_article.scrape_full_content
+    puts ""
+    puts "#{the_article.title} - #{the_article.author}"
+    puts "-----"
+    puts the_article.content
+    puts ""
   end
 
   def goodbye
