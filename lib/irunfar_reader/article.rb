@@ -11,11 +11,11 @@ class IrunfarReader::Article
     doc = Nokogiri::HTML(open("http://www.irunfar.com/"))
 
     doc.css(".hpblock h2 a").each_with_index do |article, index|
-      article = self.new
-      article.title = doc.css(".hpblock h2 a")[index].text
-      article.author = doc.css('.hpblock p a[rel="author"]')[index].text
-      article.url = doc.css(".hpblock h2 a")[index].attribute("href").value
-      self.all << article
+      a = self.new
+      a.title = doc.css(".hpblock h2 a")[index].text
+      a.author = doc.css('.hpblock p a[rel="author"]')[index].text
+      a.url = doc.css(".hpblock h2 a")[index].attribute("href").value
+      self.all << a
     end
 
     self.all
