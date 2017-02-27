@@ -26,7 +26,7 @@ class IrunfarReader::CLI
       puts "or 'exit' to exit the program."
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if input.to_i > 0 && input.to_i <= IrunfarReader::Article.all.size
         show_article(input.to_i - 1)
       elsif input == "list"
         list_articles
