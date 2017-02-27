@@ -40,7 +40,6 @@ class IrunfarReader::CLI
 
   def show_article(i)
     the_article =  IrunfarReader::Article.all[i]
-    IrunfarReader::Scraper.new.scrape_full_content(the_article)
     puts ""
     puts "#{the_article.title} - #{the_article.author}"
     puts "-----"

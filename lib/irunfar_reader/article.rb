@@ -11,4 +11,8 @@ class IrunfarReader::Article
     @@all << self
   end
 
+  def content
+    @content ||= IrunfarReader::Scraper.new.scrape_full_content(self)
+  end
+
 end
