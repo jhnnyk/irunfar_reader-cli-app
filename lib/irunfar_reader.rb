@@ -3,5 +3,6 @@ require 'nokogiri'
 require 'pry'
 
 require_relative "./irunfar_reader/version"
+require_relative './irunfar_reader/scraper'
 require_relative './irunfar_reader/article'
 require_relative './irunfar_reader/cli'

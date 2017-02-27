@@ -1,7 +1,7 @@
 class IrunfarReader::CLI
   
   def call
-    IrunfarReader::Article.scrape_articles
+    IrunfarReader::Scraper.new.scrape_articles
     list_articles
     menu
   end
@@ -11,8 +11,7 @@ class IrunfarReader::CLI
     puts "----------------------------------"
     puts "Welcome to the iRunFar.com Reader!"
     puts "----------------------------------"
-    @articles = IrunfarReader::Article.all
-    @articles.each.with_index(1) do |article, i|
+    IrunfarReader::Article.all.each.with_index(1) do |article, i|
       puts "#{i}. #{article.title} - #{article.author}"      
     end
     puts "----------------------------------"
@@ -40,8 +39,8 @@ class IrunfarReader::CLI
   end
 
   def show_article(i)
-    the_article =  @articles[i]
-    the_article.scrape_full_content
+    the_article =  IrunfarReader::Article.all[i]
+    IrunfarReader::Scraper.new.scrape_full_content(the_article)
     puts ""
     puts "#{the_article.title} - #{the_article.author}"
     puts "-----"
